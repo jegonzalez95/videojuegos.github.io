@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title>Junior Gonzalez</title>
+	<script>
+		window.onload = function () {
+			var canvas = document.getElementById("canvas1");
+			if (canvas && canvas.getContext) {
+				var ctx = canvas.getContext("2d");
+				if (ctx) {
+					//Creacion en tono degrade//
+					var gradiente = ctx.createLinearGradient(0, 0, 0, canvas.height);
+					gradiente.addColorStop(0, "#4A6F8F");
+					gradiente.addColorStop(0.5, "green");
+					gradiente.addColorStop(0.8, "#226554");
+					gradiente.addColorStop(1, "black");
+					ctx.fillStyle = gradiente;
+					ctx.fillRect(0, 0, canvas.width, canvas.height);
+					//Imagen
+					var imagen = new Image();
+					function procesaImagen() {
+					ctx.drawImage(imagen, 250, 150, 150, 150);
+					}
+					imagen.src = "Foto.png";
+					imagen.onload = function (e) {
+						procesaImagen();
+					}
+
+					ctx.lineWidth = 10;
+					ctx.strokeStyle = "black";
+					ctx.fillStyle = "";
+
+                    //Letra J
+                    ctx.beginPath();
+					ctx.moveTo(45, 45);
+					ctx.lineTo(70, 45);
+					ctx.lineTo(70, 95);
+					ctx.lineTo(40, 95);
+					ctx.lineTo(40, 75);
+					ctx.stroke();
+
+                    //Letra U
+                    ctx.beginPath();
+					ctx.moveTo(120, 40);
+					ctx.lineTo(120, 95);
+					ctx.lineTo(90, 95);
+					ctx.lineTo(90, 40);
+					ctx.stroke();
+                    
+                    //Letra N
+                    ctx.beginPath();
+					ctx.moveTo(140, 100);
+					ctx.lineTo(140, 50);
+					ctx.lineTo(175, 90)
+					ctx.lineTo(175, 40);
+					ctx.stroke();
+
+                    //Letra I
+                    ctx.beginPath();
+                    ctx.moveTo(195, 40);
+					ctx.lineTo(195, 100);
+					ctx.stroke();
+
+                    //Letra O    
+                    ctx.beginPath();
+                    ctx.arc(240,70,28, 0, 2 * Math.PI);
+                    ctx.stroke();
+
+					//Letra R
+				
+					ctx.beginPath();
+					ctx.moveTo(282, 103);
+					ctx.lineTo(282, 45);
+					ctx.lineTo(310, 45);
+					ctx.lineTo(310, 75);
+					ctx.lineTo(290, 75);
+					ctx.lineTo(320, 100);		
+					ctx.stroke();
+
+				}
+
+			} else {
+				alert("Error al crear el contexto");
+			}
+		}
+
+	</script>
+</head>
+
+
+<body>
+	<h1>Desarrollo Video Juegos</h1>
+	<canvas id="canvas1" width="500px" height="300px">
+		Tu navegador no soporta el CANVAS
+	</canvas>
+	
+	<form action="unidad_2_4.html">
+    <input  type="submit" style="background-color: #009eb9" value="JUGAR"/>
+</form>
+</body>
+
+</html>
